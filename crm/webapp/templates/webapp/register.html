@@ -1,11 +1,13 @@
 {% extends 'webapp/base.html' %}
 
+{% load crispy_forms_tags %}
+
 {% block title %}register{% endblock %}
 
 
 {% block content %}
 
-    <div class="container bg-light shadow-md p-5">
+    <div class="container bg-light shadow-md p-5 form-layout">
 
         <h3>Create your account</h3>
         <br>
@@ -13,10 +15,10 @@
         <hr>
         <br>
 
-        <form class="form-layout" action="" method="post" autocomplete="off">
+        <form action="" method="post" autocomplete="off">
             {% csrf_token %}
 
-            {{ form.as_p }}
+            {{ form|crispy }}
 
             <br>
 
