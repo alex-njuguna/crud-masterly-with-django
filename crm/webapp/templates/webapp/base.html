@@ -1,4 +1,4 @@
-{% load 'static' %}
+{% load static %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -9,21 +9,28 @@
 
     <link rel="stylesheet" href="https://bootswatch.com/5/flatly/bootstrap.min.css">
 
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="/static/css/styles.css">
 </head>
 <body>
     
     <!-- nav bar -->
+    {% include 'webapp/navbar.html' %}
 
-    <br>
+    <div class="container">
 
+        <br>
+
+        <!-- Notification messages -->
     
-    {% block content %}
-        
-    {% endblock content %}
+        {% block content %}
+            
+        {% endblock content %}
+
+    </div>
+    
         
 
-    <script src="{% static 'js/app.js' %}"></script>
+    <script src="static/js/app.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
 

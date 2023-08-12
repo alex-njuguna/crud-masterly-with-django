@@ -1,5 +1,16 @@
 from django.shortcuts import render
 
+from .forms import LoginForm, RegistrationForm
+
+
+
+
 
 def index(request):
-    pass
+    
+    return render(request, 'webapp/index.html')
+
+
+
+
+
