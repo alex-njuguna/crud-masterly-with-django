@@ -1,0 +1,38 @@
+{% extends 'webapp/base.html' %}
+
+{% block title %}register{% endblock %}
+
+
+{% block content %}
+
+    <div class="container bg-light shadow-md p-5">
+
+        <h3>Create your account</h3>
+        <br>
+        <h5>Start managing your clients today!</h5>
+        <hr>
+        <br>
+
+        <form class="form-layout" action="" method="post" autocomplete="off">
+            {% csrf_token %}
+
+            {{ form.as_p }}
+
+            <br>
+
+            <button class="btn btn-primary w-100 btn-block p-2" type="submit">Create account</button>
+
+        </form>
+
+        <br>
+
+        <div class="text-center">
+            <p>Already have an account?</p><a href="#">Log in</a>
+        </div>
+
+    </div>
+
+{% endblock %}
+
+
+
