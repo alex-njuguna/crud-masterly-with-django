@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
+from django.contrib.auth.decorators import login_required
 
 from .forms import LoginForm, RegistrationForm
 
@@ -43,13 +44,16 @@ def user_login(request):
             if user is not None:
                 login(request, user)
 
-                return redirect('')
+                return redirect('dashboard')
     else:
         form = LoginForm()
     
     return render(request, 'webapp/login.html', {'form':form})
 
 
+@login_required(login_url='login')
+def dashboard(request):
 
+    return render(request, 'webapp/dashboard.html')
 
 
