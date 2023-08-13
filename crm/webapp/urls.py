@@ -14,8 +14,9 @@ urlpatterns = [
     #crud
     path('dashboard/', views.dashboard, name='dashboard'),
     path('create-record/', views.create_record, name='create_record'),
-    path('record/<int:pk>/', views.single_record, name='record'),
-    path('update/<int:pk>/', views.update_record, name='update'),
+    path('view-record/<int:pk>/', views.single_record, name='view-record'),
+    path('update-record/<int:pk>/', views.update_record, name='update-record'),
+    path('delete-record/<int:pk>/', views.delete_record, name='delete-record'),
 
 
 ]

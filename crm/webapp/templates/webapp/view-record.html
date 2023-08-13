@@ -41,11 +41,11 @@
 
     &nbsp;
 
-    <a href="{% url 'update' record.id %}" class="btn btn-info"> Update </a>
+    <a href="{% url 'update-record' record.id %}" class="btn btn-info"> Update </a>
 
     &nbsp;
 
-    <a href="#" class="btn btn-danger"> Delete </a>
+    <a href="{% url 'delete-record' record.id %}" class="btn btn-danger"> Delete </a>
 
 
 {% endblock content %}
