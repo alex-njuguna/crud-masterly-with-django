@@ -66,6 +66,7 @@ def dashboard(request):
 
 @login_required(login_url='login')
 def create_record(request):
+    """create a record"""
     form = CreateRecordForm()
 
     if request.method == 'POST':
@@ -78,11 +79,30 @@ def create_record(request):
         
     else:
         form = CreateRecordForm()
-        
+
     context = {
         'form':form
     }
     return render(request, 'webapp/create-record.html', context)
 
 
+@login_required(login_url='login')
+def update_record(request, pk):
+    """update a record"""
+    record = Record.objects.get(id=pk)
 
+    form = UpdateRecordForm(instance=record)
+
+    if request.method == 'POST':
+        form = UpdateRecordForm(request.POST, instance=record)
+
+        if form.is_valid():
+            form.save()
+
+            return redirect('dashboard')
+
+    context = {
+        'form': form
+    }
+
+    return render(request, 'webapp/update.html', context)

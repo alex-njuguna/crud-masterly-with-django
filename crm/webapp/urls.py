@@ -13,5 +13,7 @@ urlpatterns = [
 
     #crud
     path('dashboard/', views.dashboard, name='dashboard'),
-    path('create-record/', views.create_record, name='create_record')
+    path('create-record/', views.create_record, name='create_record'),
+    path('update/<int:pk>/', views.update_record, name='update'),
+
 ]

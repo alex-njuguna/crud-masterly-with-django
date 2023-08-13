@@ -15,7 +15,7 @@ class Record(models.Model):
     country = models.CharField(max_length=100)
 
     class Meta:
-        ordering = ('creation_date',)
+        ordering = ('-creation_date',)
 
     def __str__(self):
         return f'{self.first_name} {self.last_name}'
