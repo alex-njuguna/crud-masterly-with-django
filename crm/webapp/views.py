@@ -106,3 +106,16 @@ def update_record(request, pk):
     }
 
     return render(request, 'webapp/update.html', context)
+
+
+@login_required(login_url='login')
+def single_record(request, pk):
+    """update a record"""
+    all_records = Record.objects.get(id=pk)
+
+    context = {
+        'record': all_records
+    }
+
+    return render(request, 'webapp/view-record.html', context)
+
