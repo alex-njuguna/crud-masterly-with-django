@@ -6,7 +6,63 @@
 
 
 {% block content %} 
-
-    <h1>Welcome to the dashboard!</h1>
+    <h3 class="text-right text-info">{{ user }}</h3>
+    <hr>
+    <br>
+    <h5>Welcome to the dashboard!</h5>
+    <br>
+    <a href="{% url 'dashboard' %}" class="btn btn-primary btn-sm">Create a new record</a>
+    <hr>
     
+    <table class="table table-hover table-bordered">
+
+        <thead class="table-light">
+
+            <tr>
+
+                <th scope="col"> ID </th>
+                <th scope="col"> Full name </th>
+                <th scope="col"> Email </th>
+                <th scope="col"> Phone </th>
+                <th scope="col"> Address </th>
+                <th scope="col"> Cty </th>
+                <th scope="col"> Province </th>
+                <th scope="col"> Country </th>
+                <th scope="col"> Created on </th>
+
+            
+                <th scope="col"> View </th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+            
+            {% if records %}
+                
+                {% for record in records %}
+                    
+                    <tr>
+
+                        <td>{{ record.id }}</td>
+                        <td>{{ record.first_name }} {{ record.last_name }}</td>
+                        <td>{{ record.email }}</td>
+                        <td>{{ record.phone }}</td>
+                        <td>{{ record.address }}</td>
+                        <td>{{ record.city }}</td>
+                        <td>{{ record.province }}</td>
+                        <td>{{ record.country }}</td>
+                        <td>{{ record.creation_date }}</td>
+
+                    </tr>
+    
+                {% endfor %}
+                    
+            {% endif %}
+
+        </tbody>
+    </table>
+        
+
 {% endblock %}

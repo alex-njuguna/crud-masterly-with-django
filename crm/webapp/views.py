@@ -3,6 +3,7 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 
 from .forms import LoginForm, RegistrationForm
+from .models import Record
 
 
 def index(request):
@@ -27,9 +28,9 @@ def register(request):
     
     return render(request, 'webapp/register.html', context)
 
-
+"""
 def user_login(request):
-    """log in a user"""
+    
     form = LoginForm()
 
     if request.method == 'POST':
@@ -49,11 +50,21 @@ def user_login(request):
         form = LoginForm()
     
     return render(request, 'webapp/login.html', {'form':form})
-
+"""
 
 @login_required(login_url='login')
 def dashboard(request):
+    """display all records"""
+    my_records = Record.objects.all()
 
-    return render(request, 'webapp/dashboard.html')
+    context = {
+        'records': my_records
+    }
+
+    return render(request, 'webapp/dashboard.html', context)
+
+
+
+
 
 

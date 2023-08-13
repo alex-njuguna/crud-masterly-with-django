@@ -14,6 +14,9 @@ class Record(models.Model):
     province = models.CharField(max_length=100)
     country = models.CharField(max_length=100)
 
+    class Meta:
+        ordering = ('creation_date',)
+
     def __str__(self):
         return f'{self.first_name} {self.last_name}'
 
