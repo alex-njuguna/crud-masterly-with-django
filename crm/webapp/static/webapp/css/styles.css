@@ -2,3 +2,8 @@
     border-radius: 15px;
     width: 500px;
 }
+
+.center-button {
+    display: flex;
+    justify-content: center;
+}

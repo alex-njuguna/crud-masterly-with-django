@@ -11,5 +11,7 @@ urlpatterns = [
     path('login/', LoginView.as_view(template_name='webapp/login.html', next_page='dashboard'), name='login'),
     path('logout/', LogoutView.as_view(next_page='login'), name='logout'),
 
-    path('dashboard/', views.dashboard, name='dashboard')
+    #crud
+    path('dashboard/', views.dashboard, name='dashboard'),
+    path('create-record/', views.create_record, name='create_record')
 ]
