@@ -37,15 +37,19 @@
 
     <br>
 
-    <a href="{% url 'dashboard' %}" class="btn btn-secondary"> Return </a>
+    <a href="{% url 'dashboard' %}" class="btn btn-secondary"> Return &nbsp;<i class="fa fa-long-arrow-left" aria-hidden="true"></i>
+
+    </a>
 
     &nbsp;
 
-    <a href="{% url 'update-record' record.id %}" class="btn btn-info"> Update </a>
+    <a href="{% url 'update-record' record.id %}" class="btn btn-info"> Update &nbsp;<i class="fa fa-pencil" aria-hidden="true"></i>
+    </a>
 
     &nbsp;
 
-    <a href="{% url 'delete-record' record.id %}" class="btn btn-danger"> Delete </a>
+    <a href="{% url 'delete-record' record.id %}" class="btn btn-danger"> Delete &nbsp;<i class="fa fa-trash" aria-hidden="true"></i>
+    </a>
 
 
 {% endblock content %}

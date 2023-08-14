@@ -11,7 +11,7 @@
     <br>
     <h5>Welcome to the dashboard!</h5>
     <br>
-    <a href="{% url 'create_record' %}" class="btn btn-primary btn-sm">Create a new record</a>
+    <a href="{% url 'create_record' %}" class="btn btn-primary btn-sm">Create a new record &nbsp;<i class="fa fa-plus-circle" aria-hidden="true"></i></a>
     <hr>
     
     <table class="table table-hover table-bordered">
@@ -55,7 +55,7 @@
                         <td>{{ record.country }}</td>
                         <td>{{ record.creation_date }}</td>
 
-                        <td><a class="btn btn-primary" href="{% url 'view-record' record.id %}">view</a></td>
+                        <td><a class="btn btn-primary" href="{% url 'view-record' record.id %}">view &nbsp;<i class="fa fa-eye" aria-hidden="true"></i></a></td>
 
                     </tr>
     
