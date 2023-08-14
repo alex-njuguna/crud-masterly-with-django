@@ -18,7 +18,11 @@
         <form action="" method="post" autocomplete="off">
             {% csrf_token %}
 
-            {{ form|crispy }}
+            {{ form.username|as_crispy_field }}
+            <br>
+            {{ form.password1|as_crispy_field }}
+            <br>
+            {{ form.password2|as_crispy_field }}
 
             <br>
 
@@ -29,7 +33,8 @@
         <br>
 
         <div class="text-center">
-            <p>Already have an account?</p><a href="{% url 'login' %}">Log in</a>
+            <p>Already have an account?</p><a class="text-decoration-none" href="{% url 'login' %}">Log in &nbsp;<i class="fa fa-key" aria-hidden="true"></i>
+            </a>
         </div>
 
     </div>

@@ -15,21 +15,24 @@
 
         <strong>
 
+            <i class="fa fa-user" aria-hidden="true"></i>
+            &nbsp;
             {{ record.last_name|upper }}
             
-            {{ record.first_name }}
+            {{ record.first_name }} 
+
 
         </strong>
 
         <div class="card-body">
 
-            <p><strong>ID: </strong>{{ record.id }}</p>
-            <p><strong>Email: </strong>{{ record.email }}</p>
-            <p><strong>Phone number: </strong>{{ record.phone }}</p>
-            <p><strong>Address: </strong>{{ record.address }}</p>
-            <p><strong>City: </strong>{{ record.city }}</p>
-            <p><strong>Provice: </strong>{{ record.province }}</p>
-            <p><strong>Country: </strong>{{ record.country }}</p>
+            <p><strong>ID: </strong>{{ record.id }}</p><br>
+            <p><strong>Email: </strong>{{ record.email }}</p><br>
+            <p><strong>Phone number: </strong>{{ record.phone }}</p><br>
+            <p><strong>Address: </strong>{{ record.address }}</p><br>
+            <p><strong>City: </strong>{{ record.city }}</p><br>
+            <p><strong>Provice: </strong>{{ record.province }}</p><br>
+            <p><strong>Country: </strong>{{ record.country }}</p><br>
             <p><strong>Created on: </strong>{{ record.creation_date }}</p>
             
         </div>
