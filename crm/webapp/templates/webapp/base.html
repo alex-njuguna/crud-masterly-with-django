@@ -24,6 +24,21 @@
         <br>
 
         <!-- Notification messages -->
+        
+        {% for message in messages %}
+            
+            {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+
+                <p id="message-timer" class="alert alert-success float-center text-center message-text">
+
+                    <i class="fa fa-check-circle" aria-hidden="true"></i>&nbsp;{{ message }}
+
+                </p>
+                
+            {% endif %}    
+
+        {% endfor %}
+            
     
         {% block content %}
             

@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 
 from .forms import LoginForm, RegistrationForm, CreateRecordForm, UpdateRecordForm
 from .models import Record
@@ -20,6 +21,7 @@ def register(request):
         
         if form.is_valid():
             form.save()
+            messages.success(request, 'Account created successfully!')
             return redirect('login')
     
     context = {
@@ -74,6 +76,7 @@ def create_record(request):
 
         if form.is_valid():
             form.save()
+            messages.success(request, 'Record was created!')
 
             return redirect('dashboard')
         
@@ -98,6 +101,7 @@ def update_record(request, pk):
 
         if form.is_valid():
             form.save()
+            messages.success(request, 'Record was updated!')
 
             return redirect('dashboard')
 
@@ -126,6 +130,9 @@ def delete_record(request, pk):
     record = Record.objects.get(id=pk)
 
     record.delete()
+
+    messages.success(request, 'Record was deleted!')
+
 
     return redirect('dashboard')
 
